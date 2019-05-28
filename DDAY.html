@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charsett="utf-8">
+
+<title> Property On Mars</title>
+<script>
+function displayDate(){
+	document.getElementById("demo").innerHTML=Date();
+}
+</script>
+</head>
+<style type="text/css"> 
+<!-- 
+A { text-decoration: none} 
+--> 
+</style>
+<style>
+
+
+
+body {
+Font-family: sans-serif;
+font-size: 18px;
+
+}
+.table{
+            margin-left: 10px;
+            background: linear-gradient(yellow, red); 
+                     	border: 2px solid black;
+			margin: 2px 2px 2px 2px;
+            padding: 6px; 
+}
+border: 5px dashed ;
+}
+a:link,a:visited{
+
+ text-decoration:none;  
+
+}
+h1 {
+
+	color: rgb(203,27,69);
+	padding:10px 10px 25px 20px;
+	position: fixed;
+	z-index: 1;
+	margin-left: 550px;
+	
+	}
+.house{
+Border:2px solid black;
+}
+	 #official-info {
+	        float: right;
+            margin-left: 110px;
+            background: linear-gradient(Pink,green ); 
+            width: 35%;
+            height: 380px;
+            overflow-y: auto;
+            overflow-x: auto;
+         	border: 2px solid rgb(0, 243, 0);
+			margin: 2px 2px 2px 2px;
+            padding: 6px; 
+			 
+ }
+ .search{
+            margin-left: 25px;
+         	border: 2px solid black;
+ }
+ .seach{
+            background: rgb(192,192,192);
+            			margin: 2px 2px 2px 2px;
+
+             }
+        body {
+  background: linear-gradient(white, blue); 
+}
+</style>
+<body>
+<!--first part--!>
+
+	
+                <h1>                  Mars Real Estate
+                </h1><img src="http://www.sinaimg.cn/dy/slidenews/1_img/2012_28/2841_178682_283541.jpg"  width="1400" height="600">
+
+                <h2><a target="_self"  
+                    	href="https://lh3.googleusercontent.com/2G3NcjNhNfYyXLN2obCcZpUuMl_6ADrO9HajQVQz_c_49WVuj1IX4wqB95AKG0YGyQaTEn5Sdow1b3pOKmZZgNPs966XrJGmIoRkyPWIzvBAx-SD_9TzMNMIg8383URkb4xwgC75" >On Mars </a>
+                
+<img src= "data:image/jpeg;base64,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" width="73" height="70">
+</h2>
+
+<p id="demo">Here is my paragraph</p>
+
+<button type="button" onclick="displayDate()">show the date</button>
+<button type="button" onclick="alert('Welcome!')">click me!</button>
+
+        <p>	
+				     
+				     
+		 <div id="official-info">
+        <h3>
+      <br> Our Promotional slogan</br>
+
+      <br>  Sonnet 1 </br>
+      </h3>
+        <p>
+        <br> Edward Ma        <br>
+        <br> Earth is the home of mankind, human beings</br>
+        <br> But it is deeply injured by humans </br>
+        <br> We have no more resources for surviving, </br>
+        <br> the news will be posted soon by the anchormen.</br>
+        <br>                </br>
+        <br> Mars could be the best place for us to move</br>
+        <br> Relics of living things can give us proof</br>
+        <br> Mars is liveable with improvements  </br>
+        <br> We just need a few weatherproof building </br>
+        <br></br>
+        <br> Some people want different experiences 11<br>
+        <br>They like trying to live in somewhere new</br>
+        <br>Security assurance is serious.11 </br>
+        <br>We will have advanced equipment for you</br>
+        <br></br>
+        <br>If you want have different adventures </br>
+        <br>Join us or it will be misadventures </br>
+        
+        
+        
+        </p>
+
+</div>
+						<br><a target="_self"  
+                    	href="https://lh3.googleusercontent.com/2G3NcjNhNfYyXLN2obCcZpUuMl_6ADrO9HajQVQz_c_49WVuj1IX4wqB95AKG0YGyQaTEn5Sdow1b3pOKmZZgNPs966XrJGmIoRkyPWIzvBAx-SD_9TzMNMIg8383URkb4xwgC75" >Captial of Mar--- </a>
+                	</br>
+                   <br> 	<a target="_self"  
+                    	href="https://lh3.googleusercontent.com/2G3NcjNhNfYyXLN2obCcZpUuMl_6ADrO9HajQVQz_c_49WVuj1IX4wqB95AKG0YGyQaTEn5Sdow1b3pOKmZZgNPs966XrJGmIoRkyPWIzvBAx-SD_9TzMNMIg8383URkb4xwgC75" >North of Mars---</a>
+                	</br>
+                	 <br> 	<a target="_self"  
+                    	href="https://lh3.googleusercontent.com/2G3NcjNhNfYyXLN2obCcZpUuMl_6ADrO9HajQVQz_c_49WVuj1IX4wqB95AKG0YGyQaTEn5Sdow1b3pOKmZZgNPs966XrJGmIoRkyPWIzvBAx-SD_9TzMNMIg8383URkb4xwgC75" >Nowhere of Mars</a></br>
+         </p>
+			
+			
+        
+        	<div><a href="https://lh3.googleusercontent.com/2G3NcjNhNfYyXLN2obCcZpUuMl_6ADrO9HajQVQz_c_49WVuj1IX4wqB95AKG0YGyQaTEn5Sdow1b3pOKmZZgNPs966XrJGmIoRkyPWIzvBAx-SD_9TzMNMIg8383URkb4xwgC75" target="_self">Brand New House </a></div>
+                  	
+            <div>
+                    		<a 
+                                    		target="_self" 
+                </div>    		<!--more_tab_content-->
+				</div>      		
+		<!--tab1_content_end-->
+          
+                									
+																
+			
+			
+
+		</div>
+		
+		
+		
+		
+				<div>
+		        	<div><a href="https://lh3.googleusercontent.com/2G3NcjNhNfYyXLN2obCcZpUuMl_6ADrO9HajQVQz_c_49WVuj1IX4wqB95AKG0YGyQaTEn5Sdow1b3pOKmZZgNPs966XrJGmIoRkyPWIzvBAx-SD_9TzMNMIg8383URkb4xwgC75" target="_self">Home</a></div>
+		        	
+		        </div>
+
+-
+                    		<div >
+        	<div><a href="https://lh3.googleusercontent.com/2G3NcjNhNfYyXLN2obCcZpUuMl_6ADrO9HajQVQz_c_49WVuj1IX4wqB95AKG0YGyQaTEn5Sdow1b3pOKmZZgNPs966XrJGmIoRkyPWIzvBAx-SD_9TzMNMIg8383URkb4xwgC75" target="_self">New houses </a></div>
+                  	
+            <div>
+            	<ul>
+                  	
+                    	<li >
+                    		<a 
+                    	
+                    		target="_self" 
+                    		
+                    		href="https://lh3.googleusercontent.com/2G3NcjNhNfYyXLN2obCcZpUuMl_6ADrO9HajQVQz_c_49WVuj1IX4wqB95AKG0YGyQaTEn5Sdow1b3pOKmZZgNPs966XrJGmIoRkyPWIzvBAx-SD_9TzMNMIg8383URkb4xwgC75" >
+
+                    		
+                    			New This Month 
+                    		</a>
+                    	</li>
+                	
+                    	<li >
+                    		<a 
+                    	
+                    		target="_self" 
+                    		
+                    		href="https://lh3.googleusercontent.com/2G3NcjNhNfYyXLN2obCcZpUuMl_6ADrO9HajQVQz_c_49WVuj1IX4wqB95AKG0YGyQaTEn5Sdow1b3pOKmZZgNPs966XrJGmIoRkyPWIzvBAx-SD_9TzMNMIg8383URkb4xwgC75" >
+                    		
+                    		popular houses 
+                    		</a>
+                    	</li>
+                	
+                    	<li >
+                    		<a 
+                    		
+                    		target="_self" 
+                    
+                 href="https://lh3.googleusercontent.com/2G3NcjNhNfYyXLN2obCcZpUuMl_6ADrO9HajQVQz_c_49WVuj1IX4wqB95AKG0YGyQaTEn5Sdow1b3pOKmZZgNPs966XrJGmIoRkyPWIzvBAx-SD_9TzMNMIg8383URkb4xwgC75" >
+                    		
+                    			Bargain Price House 
+                    		</a>
+                    	</li>
+                	
+                    	<li >
+                    		<a 
+                    	
+                    		target="_self" 
+                    		
+                    		href="https://lh3.googleusercontent.com/2G3NcjNhNfYyXLN2obCcZpUuMl_6ADrO9HajQVQz_c_49WVuj1IX4wqB95AKG0YGyQaTEn5Sdow1b3pOKmZZgNPs966XrJGmIoRkyPWIzvBAx-SD_9TzMNMIg8383URkb4xwgC75" >
+                    		
+                    			Get the house in this month
+                    		</a>
+                    	</li>
+                	
+                    	
+                	
+                    	<li >
+                    		<a 
+                    
+                    		target="_self" 
+                    		
+                    		href="https://lh3.googleusercontent.com/2G3NcjNhNfYyXLN2obCcZpUuMl_6ADrO9HajQVQz_c_49WVuj1IX4wqB95AKG0YGyQaTEn5Sdow1b3pOKmZZgNPs966XrJGmIoRkyPWIzvBAx-SD_9TzMNMIg8383URkb4xwgC75" >
+                    		
+                    			Help
+                    		</a>
+                    	</li>
+                	
+                    	<li >
+                    		<a 
+                    		
+                    		target="_self" 
+                    		
+                    		href="https://lh3.googleusercontent.com/2G3NcjNhNfYyXLN2obCcZpUuMl_6ADrO9HajQVQz_c_49WVuj1IX4wqB95AKG0YGyQaTEn5Sdow1b3pOKmZZgNPs966XrJGmIoRkyPWIzvBAx-SD_9TzMNMIg8383URkb4xwgC75" >
+                    		
+                    			Rank of new Houses
+                    		</a>
+                    	</li>
+                	
+                    	<li >
+                    		<a 
+                    		target="_self" 
+                    		
+                    		href="https://lh3.googleusercontent.com/2G3NcjNhNfYyXLN2obCcZpUuMl_6ADrO9HajQVQz_c_49WVuj1IX4wqB95AKG0YGyQaTEn5Sdow1b3pOKmZZgNPs966XrJGmIoRkyPWIzvBAx-SD_9TzMNMIg8383URkb4xwgC75" >
+                    		
+                    			Knowledge you need to know 
+                    		</a>
+                    	</li>
+                	
+                    	
+                	
+                    	<li style="margin-bottom:8px">
+                    		<a id="dsy_D01_81" target="_self" href="https://lh3.googleusercontent.com/2G3NcjNhNfYyXLN2obCcZpUuMl_6ADrO9HajQVQz_c_49WVuj1IX4wqB95AKG0YGyQaTEn5Sdow1b3pOKmZZgNPs966XrJGmIoRkyPWIzvBAx-SD_9TzMNMIg8383URkb4xwgC75" >
+                    		
+                    			
+                    			<div>Help you to find your dream house </div>
+                    				
+                    		</a>
+
+	<li> <button style="width:250px;height:50px">
+	<li style="margin-bottom:8px">
+                    		<a target="_self" href="https://docs.google.com/presentation/d/1rkqSqQcbRvx5xvqVaUZ5elRk6XjsrUNEspus_QtxUXo/edit?usp=sharing">
+	 More information about our company </a>
+	 </button>
+	</li>
+	
+
+ 	</ul>
+            </div>
+                  	
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+<thead>
+	<tr class="seach">
+	<th>                  <div class="c-enquiry-form__input c-enquiry-form__input--background">
+                            <input style="width:600px;height:30px"
+                                class="c-enquiry-form__input--text js-enquiry__country-tel-code"
+                                name="phone"
+                                data-validate="require|numeric"
+                                type="text"
+                                value=""
+                                placeholder="City, Province or Orientation"   > 
+                             
+                                </div> <button id="btn1" style="width:500px;height:50px"> Search </button>
+	</tr>
+	
+	
+	
+	
+	<table class="table" border="2">
+	</thead>
+	<tbody>
+<div class="tr">
+	<tr>
+	<td>Province/City:</td>
+	<td><a href="https://lh3.googleusercontent.com/2G3NcjNhNfYyXLN2obCcZpUuMl_6ADrO9HajQVQz_c_49WVuj1IX4wqB95AKG0YGyQaTEn5Sdow1b3pOKmZZgNPs966XrJGmIoRkyPWIzvBAx-SD_9TzMNMIg8383URkb4xwgC75" 
+	>North Mars (Edward City)</td>
+	<td><a href="https://lh3.googleusercontent.com/2G3NcjNhNfYyXLN2obCcZpUuMl_6ADrO9HajQVQz_c_49WVuj1IX4wqB95AKG0YGyQaTEn5Sdow1b3pOKmZZgNPs966XrJGmIoRkyPWIzvBAx-SD_9TzMNMIg8383URkb4xwgC75"
+     >South Mars(Tim zhitao City)</a></td>
+	<td><a href="https://lh3.googleusercontent.com/2G3NcjNhNfYyXLN2obCcZpUuMl_6ADrO9HajQVQz_c_49WVuj1IX4wqB95AKG0YGyQaTEn5Sdow1b3pOKmZZgNPs966XrJGmIoRkyPWIzvBAx-SD_9TzMNMIg8383URkb4xwgC75" 
+	>East Mars(City of Kaiwen) </td>
+	<td><a href="https://lh3.googleusercontent.com/2G3NcjNhNfYyXLN2obCcZpUuMl_6ADrO9HajQVQz_c_49WVuj1IX4wqB95AKG0YGyQaTEn5Sdow1b3pOKmZZgNPs966XrJGmIoRkyPWIzvBAx-SD_9TzMNMIg8383URkb4xwgC75" 
+	>West Mars(City of Clarkson 001)</td>
+	<td><a href="https://lh3.googleusercontent.com/2G3NcjNhNfYyXLN2obCcZpUuMl_6ADrO9HajQVQz_c_49WVuj1IX4wqB95AKG0YGyQaTEn5Sdow1b3pOKmZZgNPs966XrJGmIoRkyPWIzvBAx-SD_9TzMNMIg8383URkb4xwgC75" >	
+--Inside of Mars</td>
+	</tr>
+	</div>
+	
+	<tr id="abc">
+	<td>Popular City Choice:</td>
+		<td>Unlimited</td>
+	<td>King Edward City </td>
+	<td>Tim nobody's City </td>	
+	<td>Kaiwen idk city</td>
+	<td>Jerry can't finish city</td>
+	<td>Clarkson 001</td>
+	</tr>
+	<tr>
+	</tr>
+	<tr class="house">
+	<td>House Type:</td>
+	<td>Unlimited</td>
+	<td>New House</td>
+	<td>Commercial House</td>
+	<td>Residence House</td>
+	<td>Country House</td>
+	<td>Land Sale</td>
+	<td>Luxe House<td>
+	<td></td>
+ 	</tr>
+ 	<tr>
+ 	<td>Total Prices:</td>
+ 	<td>Unlimited</td>
+ 	<td>Under A Million</td>
+ 	<td>100-300 Million</td>
+ 	<td>300-500 Million</td>
+ 	<td>500-700 Million</td>
+ 	<td>700-1000 Million</td>
+ 	<td> Over 1000 Million</td>
+ 	</tr>
+ 	<tr>
+  	<td>Status:</td>
+	<td>Unlimited </td>
+ 	<td>Sell </td>
+	<td>Rent </td>
+	<td></td>
+
+ 	</table>
+ 	</tbody>
+</table>
+</div>
+                 <br>
+                   Information for Sign up</br>
+                                            Already have an account? <button style="width:70px;height:20px">login here</button>
+                </p>
+            </div>
+
+            
+                <div >
+                    <form >
+                        <input type="hidden" name="origin" value="Web">
+                        <input type="hidden" name="orgid" value="00D90000000lh7N">
+                                                <input
+                            type="hidden"
+                            name="url"
+                            value='https://www.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8'
+                        >
+                        <input type="hidden" name="reason" value="General"/>
+                        <input type="hidden" name="type" value="Global Home Page">
+                        <input
+                            type="hidden"
+                            name="subject"
+                            value="Global Home Page Enquiry "
+                        >
+                                                <input
+                           
+                            type="hidden"
+                            name="00N90000006vyDW"
+                            value="Chinese Simplified"
+                        >
+                        <input name="00N6F00000Hs3en" value="1558654434000-yainmelr" type="hidden">
+                        <div>
+                            <input style="width:500px;height:50px"
+                             
+                                name="name"
+                                data-validate="require|name"
+                                type="text"
+                                value=""
+                                placeholder="Please Type Your Name Here "
+                            >
+                        </div>
+                        <div>
+                            <input style="width:500px;height:50px"
+                                name="phone"
+                                data-validate="require|numeric"
+                                type="text"
+                                value=""
+                                placeholder="Type Your Phone Number Here"
+                            >
+                        </div>
+                        <div>
+                            <input style="width:500px;height:50px"
+                                name="email"
+                                data-validate="require|email"
+                                type="text"
+                                value=""
+                                placeholder="Type your E-Mail address"
+                            >
+                        </div>
+
+  <label>
+                                <input
+                                    name="reg"
+                                    type="checkbox"
+                                    value="1"
+                                    checked="checked">
+                                I agree the Privacy Policy.
+                                Become one of us and have a different adventures. </label>
+
+
+                        </div>
+                                                <a  data-action></a>
+                          <button style="width:50px;height:20px">submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+</body>
+</html>
+
